@@ -1,0 +1,46 @@
+$colors: rgb(197, 189, 189) rgb(235, 235, 235) rgb(192, 192, 192) rgb(238, 238, 238) rgb(182, 182, 182) rgb(235, 235, 235);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+
+body, html {
+    height: 100%;
+}
+
+h1 {
+    margin: 3rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    grid-gap: 1rem;
+    cursor: pointer;
+
+    .card{
+
+        transition: transform 1s;
+
+        @for $i from 1 through 6 {
+            &:nth-of-type(#{$i}) {
+                background: nth($colors, $i)
+            }
+        } 
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .info {
+            padding: 1rem;
+        }
+    }
+}
